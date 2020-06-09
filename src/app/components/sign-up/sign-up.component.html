@@ -1,0 +1,38 @@
+<p class="warning">* - Required!</p>
+<form class="mainBlock" [formGroup]="signUpForm" (ngSubmit)="toSend()">
+    <div class="form-group">
+        <input type="text" name="name" class="form-control innerBlocks" placeholder="Write your name*"
+        formControlName="name">
+        <div class="alert alert-danger" *ngIf="signUpForm.controls['name'].invalid && 
+        signUpForm.controls['name'].touched">
+            Name isn't given.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="surname" class="form-control innerBlocks" placeholder="Write your surname*"
+        formControlName="surName">
+        <div class="alert alert-danger" *ngIf="signUpForm.controls['surName'].invalid && 
+        signUpForm.controls['surName'].touched">
+            Surname isn't given.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="mobile" class="form-control innerBlocks" placeholder="Write your mobile*"
+        formControlName="mobile">
+        <div class="alert alert-danger" *ngIf="signUpForm.controls['mobile'].invalid && 
+        signUpForm.controls['mobile'].touched">
+            Not more and less than 9 symbols.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="email" class="form-control innerBlocks" placeholder="Write your e-mail*"
+        formControlName="eMail">
+        <div class="alert alert-danger" *ngIf="signUpForm.controls['eMail'].invalid && 
+        signUpForm.controls['eMail'].touched">
+            Email is incorrect.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success clickable" [disabled]="signUpForm.invalid" title="Click here">
+        Sign Up
+    </button>
+</form>

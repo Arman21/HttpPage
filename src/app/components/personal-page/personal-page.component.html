@@ -1,0 +1,9 @@
+<h1 class="title">Page for {{ title }}.</h1>
+<form class="main" action="">
+    <input type="text" name="userName" class="textField" placeholder="Write a user name!"
+    [(ngModel)]="userInfo.first_name">
+    <input type="text" name="userSurname" class="textField" placeholder="Write a user surname!"
+    [(ngModel)]="userInfo.last_name">
+    <input type="submit" [ngClass]="stylesObj" value="Send" title="Click Here" (click)="sendInfo('send','send2')">
+</form>
+<a [routerLink]="['/sign-up']" class="link">Click for sign-up</a>

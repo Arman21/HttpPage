@@ -1,0 +1,12 @@
+<div *ngIf="mainBlock" class="content">
+    <div *ngFor="let dates of users;let i = index" class="usersDiv">
+        <p class="date" title="info">{{ dates.id }}</p>
+        <p class="date" title="info">{{ dates.email }}</p>
+        <a class="date changings" [routerLink]="['/personal-page',dates.id]" [routerLinkActive]="['activeLink']">
+            {{ dates.first_name }}
+        </a>
+        <p class="date" title="info">{{ dates.last_name }}</p>
+        <p class="date" title="info">{{ dates.avatar }}</p>
+        <span class="delete" title="Remove User" (click)="removeUser(i,dates.id)">X</span>
+    </div>
+</div>
